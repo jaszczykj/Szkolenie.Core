@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftHard.Papirus.Models", "SoftHard.Papirus.Models\SoftHard.Papirus.Models.csproj", "{64EE4133-2695-4C8D-940C-03D4539DD210}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.Models", "SoftHard.Papirus.Models\SoftHard.Papirus.Models.csproj", "{64EE4133-2695-4C8D-940C-03D4539DD210}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.IServices", "SoftHard.Papirus.IServices\SoftHard.Papirus.IServices.csproj", "{E31B3A91-F993-4574-A811-F9BEED8B9141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.FakeServices", "SoftHard.Papirus.FakeServices\SoftHard.Papirus.FakeServices.csproj", "{254B1C14-9C47-42D0-9586-E6E02A9517CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftHard.Papirus.Service", "SoftHard.Papirus.Service\SoftHard.Papirus.Service.csproj", "{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{64EE4133-2695-4C8D-940C-03D4539DD210}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64EE4133-2695-4C8D-940C-03D4539DD210}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64EE4133-2695-4C8D-940C-03D4539DD210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E31B3A91-F993-4574-A811-F9BEED8B9141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31B3A91-F993-4574-A811-F9BEED8B9141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E31B3A91-F993-4574-A811-F9BEED8B9141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E31B3A91-F993-4574-A811-F9BEED8B9141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254B1C14-9C47-42D0-9586-E6E02A9517CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254B1C14-9C47-42D0-9586-E6E02A9517CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254B1C14-9C47-42D0-9586-E6E02A9517CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254B1C14-9C47-42D0-9586-E6E02A9517CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
