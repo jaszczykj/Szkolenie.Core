@@ -5,6 +5,7 @@ using SoftHard.Papirus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace SoftHard.Papirus.Service.Controllers
@@ -28,6 +29,20 @@ namespace SoftHard.Papirus.Service.Controllers
         public IActionResult Get()
         {
             var customers = customersService.Get();
+         
+            if (this.User.Identity.IsAuthenticated)
+            {
+
+            }
+
+            // if (User.HasClaim(c=>c.))
+
+            if (this.User.IsInRole("Administrator"))
+            {
+
+            }
+          
+
 
 
             return Ok(customers);
@@ -36,6 +51,7 @@ namespace SoftHard.Papirus.Service.Controllers
 
         // api/customers/100
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult Get(int id)
         {
             var customer = customersService.Get(id);
@@ -51,6 +67,11 @@ namespace SoftHard.Papirus.Service.Controllers
         [HttpPost]
         public IActionResult Post(Customer customer)
         {
+            if (this.ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             customersService.Add(customer);
 
             return CreatedAtRoute(new { customer.Id }, customer);
