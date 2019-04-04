@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.IServices"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.FakeServices", "SoftHard.Papirus.FakeServices\SoftHard.Papirus.FakeServices.csproj", "{254B1C14-9C47-42D0-9586-E6E02A9517CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftHard.Papirus.Service", "SoftHard.Papirus.Service\SoftHard.Papirus.Service.csproj", "{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftHard.Papirus.Service", "SoftHard.Papirus.Service\SoftHard.Papirus.Service.csproj", "{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftHard.Papirus.UnitTests", "SoftHard.Papirus.UnitTests\SoftHard.Papirus.UnitTests.csproj", "{EB3CF914-0264-47CB-A9A8-B8BC731C6138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49A205F1-2C6E-4B45-8A5F-DE06A653CA1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3CF914-0264-47CB-A9A8-B8BC731C6138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3CF914-0264-47CB-A9A8-B8BC731C6138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3CF914-0264-47CB-A9A8-B8BC731C6138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3CF914-0264-47CB-A9A8-B8BC731C6138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
