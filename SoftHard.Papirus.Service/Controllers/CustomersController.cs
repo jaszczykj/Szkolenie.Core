@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SoftHard.Papirus.IServices;
+using SoftHard.Papirus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,22 @@ namespace SoftHard.Papirus.Service.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            throw new NotImplementedException();
+            var customer = customersService.Get(id);
+
+            if (customer==null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customer);
+        }
+        
+        [HttpPost]
+        public IActionResult Post(Customer customer)
+        {
+            customersService.Add(customer);
+
+            return CreatedAtRoute(new { customer.Id }, customer);
         }
     }
 }
