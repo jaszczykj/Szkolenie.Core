@@ -74,8 +74,15 @@ namespace SoftHard.Papirus.ConsoleClient
 
         private static async Task AsyncAwaitTest()
         {
-            decimal amount  = await TaxCalculateAsync(100).ConfigureAwait(false);
-            decimal amount2 = await TaxCalculateAsync(amount);
+
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+            CancellationToken token = cts.Token;
+
+            IProgress<int> progress = new Progress(i=>System.Console.WriteLine($"Step {i}"));
+
+            decimal amount  = await TaxCalculateAsync(100, token, progress).ConfigureAwait(false);
+            decimal amount2 = await TaxCalculateAsync(amount, token, progress);
 
             // textbox1.Text = amount2;
 
@@ -83,6 +90,23 @@ namespace SoftHard.Papirus.ConsoleClient
 
                 // .ContinueWith(t => TaxCalculate(t.Result))
                 //    .ContinueWith(t => System.Console.WriteLine(t.Result));
+        }
+
+
+        private static async Task CalculateParallerTest()
+        {
+            var task1 = Task.Run(() => TaxCalculateAsync(100));
+
+            var task2 = Task.Run(() => TaxCalculateAsync(100));
+
+            await Task.WhenAll(task1, task2);
+
+            System.Console.WriteLine(task1.Result  + task2.Result);
+
+         
+
+
+
         }
 
 
@@ -131,16 +155,30 @@ namespace SoftHard.Papirus.ConsoleClient
         }
 
 
-        static Task<decimal> TaxCalculateAsync(decimal amount)
+        static Task<decimal> TaxCalculateAsync(decimal amount, CancellationToken token = null, IProgress<int> progress = null)
         {
-            return Task.Run(()=>TaxCalculate(amount));
+            return Task.Run(()=>TaxCalculate(amount, token, progress));
         }
 
 
-        static decimal TaxCalculate(decimal amount)
+        static decimal TaxCalculate(decimal amount, 
+            CancellationToken token = null,
+            IProgress<int> progress = null
+            )
         {
             System.Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId} Calculating...");
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+
+            for(int i=0; i<5; i++)
+            {
+                if (token!=null && token.IsCancellationRequested)
+                {
+                    break;
+                }
+            
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+
+                progress?.Report(i);
+            }
             System.Console.WriteLine($"#{Thread.CurrentThread.ManagedThreadId} Calculated.");
 
             return amount+10;
