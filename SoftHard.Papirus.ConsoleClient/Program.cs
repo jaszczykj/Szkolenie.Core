@@ -74,8 +74,10 @@ namespace SoftHard.Papirus.ConsoleClient
 
         private static async Task AsyncAwaitTest()
         {
-            decimal amount  = await TaxCalculateAsync(100);
+            decimal amount  = await TaxCalculateAsync(100).ConfigureAwait(false);
             decimal amount2 = await TaxCalculateAsync(amount);
+
+            // textbox1.Text = amount2;
 
             System.Console.WriteLine(amount2);
 
