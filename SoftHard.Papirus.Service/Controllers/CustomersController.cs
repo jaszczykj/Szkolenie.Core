@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SoftHard.Papirus.IServices;
 using SoftHard.Papirus.Models;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace SoftHard.Papirus.Service.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class CustomersController : Controller
     {
         private readonly ICustomersService customersService;
